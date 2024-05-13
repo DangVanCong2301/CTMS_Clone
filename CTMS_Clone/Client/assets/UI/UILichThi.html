@@ -1,0 +1,170 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>CTMS - Hoá đơn</title>
+    <link href="../css/styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+</head>
+<body>
+    <div>
+        <header class="header">
+            <nav class="nav container">
+                <div class="nav__data">
+                    <a href="#" class="nav__logo">CTMS CLONE</a>
+                    <div class="nav__toggle" id="nav-toggle">
+                        <i class="uil uil-bars nav__burger"></i>
+                        <i class="uil uil-times nav__close"></i>
+                    </div>
+                </div>
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="dropdown__item">
+                            <div class="nav__link">
+                                Liên kết<i class="uil uil-angle-down dropdown__arrow"></i>
+                            </div>
+                            <ul class="dropdown__menu">
+                                <li>
+                                    <a href="#" class="dropdown__link">Trang chủ</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="dropdown__link">CTMS</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="dropdown__link">FForum</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown__item">
+                            <div class="nav__link">
+                                Cá nhân<i class="uil uil-angle-down dropdown__arrow"></i>
+                            </div>
+                            <ul class="dropdown__menu">
+                                <li>
+                                    <a href="#" class="dropdown__link">Kết quả học tập</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="dropdown__link">Đăng ký chuyên ngành</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="dropdown__link">Đăng ký lớp tín chỉ</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="dropdown__link">Hoá đơn học phí</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="dropdown__link">Đổi mật khẩu</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="dropdown__link">Thoát</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="nav__link">Lịch học</a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav__link">Lịch thi</a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav__link">Chương trình đào tạo</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <div class="schedule">
+            <section class="schedule__title">
+                Lịch thi của Đặng Văn Công
+            </section>
+            <section class="bill__btn">
+                <div class="bill__check">
+                    <input type="radio" name="exam" value="" />
+                    <label for="">Sắp thi</label>
+                </div>
+                <div class="bill__check">
+                    <input type="radio" name="exam" value="" />
+                    <label for="">Đã thi</label>
+                </div>
+                <div class="bill__check">
+                    <input type="radio" name="exam" value="" />
+                    <label for="">Tất cả</label>
+                </div>
+                <input type="button" name="name" class="schedule__calendar-btn" value="Xem danh sách" />
+            </section>
+            <section class="bill__time">
+                (Lịch thi có thể bị thay đổi, bạn nên kiểm tra lại trước ngày thi)
+            </section>
+            <!--<div class="loading">Quá trình tải dữ liệu sẽ chạy sau <span id="countdown">22</span> giây!</div>-->
+            <section class="transcript__table bill__table">
+                <div class="transcript__table-content">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>STT</th>
+                                <th>Thời gian</th>
+                                <th>Phòng</th>
+                                <th>Môn</th>
+                                <th>Mã DS thi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>09:10 31/10/2020</td>
+                                <td>P31</td>
+                                <td style="text-align: left;">Sinh hoạt công dân sinh viên đầu khoá</td>
+                                <td>5704</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>09:10 31/11/2020</td>
+                                <td>P31</td>
+                                <td style="text-align: left;">Giải tích 1</td>
+                                <td>5704</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <section class="footer">
+                <div class="footer__access-count">Hiện có 100 truy cập</div>
+                <div class="footer__copyright">&#169; Một sản phẩm của VanCong</div>
+            </section>
+        </div>
+    </div>
+    <script src="../js/main.js"></script>
+    <script type="text/javascript">
+        function getDay() {
+            var day = new Date();
+            var yyyy = day.getFullYear();
+            var MM = day.getMonth() + 1;
+            if (MM < 10) {
+                MM = '0' + MM
+            }
+            var dd = day.getDate();
+            if (dd < 10) {
+                dd = '0' + dd;
+            }
+            var currDay = yyyy + '-' + MM + '-' + dd;
+            console.log(currDay);
+            document.querySelector(".schedule__calendar-datetime").value = currDay;
+        }
+        getDay()
+        const countdown = document.getElementById("countdown");
+
+        let countdownValue = 10;
+        countdown.textContent = countdownValue;
+        const url = "UILichHoc.html";
+
+        setInterval(function () {
+            countdownValue--;
+            countdown.textContent = countdownValue;
+        }, 1000);
+
+        setTimeout(function () {
+            window.location.replace(url);
+        }, 10 * 1000);
+    </script>
+</body>
+</html>

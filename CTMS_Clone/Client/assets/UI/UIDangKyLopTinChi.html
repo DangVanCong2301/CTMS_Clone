@@ -1,0 +1,241 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>CTMS - Lịch học</title>
+    <link href="../css/styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+</head>
+<body>
+    <div>
+        <header class="header">
+            <nav class="nav container">
+                <div class="nav__data">
+                    <a href="#" class="nav__logo">CTMS CLONE</a>
+                    <div class="nav__toggle" id="nav-toggle">
+                        <i class="uil uil-bars nav__burger"></i>
+                        <i class="uil uil-times nav__close"></i>
+                    </div>
+                </div>
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="dropdown__item">
+                            <div class="nav__link">
+                                Liên kết<i class="uil uil-angle-down dropdown__arrow"></i>
+                            </div>
+                            <ul class="dropdown__menu">
+                                <li>
+                                    <a href="#" class="dropdown__link">Trang chủ</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="dropdown__link">CTMS</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="dropdown__link">FForum</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown__item">
+                            <div class="nav__link">
+                                Cá nhân<i class="uil uil-angle-down dropdown__arrow"></i>
+                            </div>
+                            <ul class="dropdown__menu">
+                                <li>
+                                    <a href="#" class="dropdown__link">Kết quả học tập</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="dropdown__link">Đăng ký chuyên ngành</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="dropdown__link">Đăng ký lớp tín chỉ</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="dropdown__link">Hoá đơn học phí</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="dropdown__link">Đổi mật khẩu</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="dropdown__link">Thoát</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="nav__link">Lịch học</a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav__link">Lịch thi</a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav__link">Chương trình đào tạo</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <div class="schedule">
+            <section class="schedule__title">
+                Đăng ký lớp tín chỉ
+            </section>
+            <section class="progress">
+                <div class="fill a"></div>
+            </section>
+            <section class="loading"> 
+                <div class="loading__text">
+                    Quá trình tải dữ liệu sẽ chạy sau <span id="countdow"></span>s
+                </div>
+                <div class="loading__dots">
+                    <span class="loading__dot"></span>
+                    <span class="loading__dot"></span>
+                    <span class="loading__dot"></span>
+                    <span class="loading__dot">
+                        <span class="loading__dot-down"></span>
+                    </span>
+                </div>
+            </section>
+            <!--<div class="loading">Quá trình tải dữ liệu sẽ chạy sau <span id="countdown">22</span> giây!</div>-->
+            <!--<section class="container schedule__timetable">
+                <div class="schedule__timetable-title">Sinh viên 20A100377 - Đặng Văn Công</div>
+                <div class="schedule__timetable-item">
+                    <div class="schedule__timetable-day" style="font-weight: normal">Lớp có thể đăng ký</div>
+                    <div class="schedule__timetable-table">
+                        <div class="schedule__timetable-table-content">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Đăng ký</th>
+                                        <th>Tên lớp</th>
+                                        <th>Môn - Giảng viên</th>
+                                        <th>Tối thiểu</th>
+                                        <th>Tối đa</th>
+                                        <th>Đã đăng ký</th>
+                                        <th>Hạn đăng ký</th>
+                                        <th>Lịch học dự kiến</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><i class="uil uil-arrow-circle-right register__icon register__icon-regis"></i></td>
+                                        <td>
+                                            AAS7132022.009
+                                        </td>
+                                        <td>
+                                            Lập trình di động (3 tc)<br />
+                                            Mai Thị Thuý Hà
+                                        </td>
+                                        <td>45</td>
+                                        <td>75</td>
+                                        <td>20</td>
+                                        <td>
+                                            Từ 8:00 20/8/2022 <br />
+                                            đến 14:00 25/8/2022 <br />
+                                            Huỷ trước 14:00 24/8/2022
+                                        </td>
+                                        <td>
+                                            Thứ 3 23/8/2022 7:30 - P23
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="schedule__timetable-item">
+                    <div class="schedule__timetable-day" style="font-weight: normal">Lớp vừa đăng ký</div>
+                    <div class="schedule__timetable-table">
+                        <div class="schedule__timetable-table-content">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Đăng ký</th>
+                                        <th>Tên lớp</th>
+                                        <th>Môn - Giảng viên</th>
+                                        <th>Tối thiểu</th>
+                                        <th>Tối đa</th>
+                                        <th>Đã đăng ký</th>
+                                        <th>Hạn đăng ký</th>
+                                        <th>Lịch học dự kiến</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><i class="uil uil-arrow-circle-right register__icon register__icon-des"></i></td>
+                                        <td>
+                                            AAS7132022.009
+                                        </td>
+                                        <td>
+                                            Lập trình di động (3 tc)<br />
+                                            Mai Thị Thuý Hà
+                                        </td>
+                                        <td>45</td>
+                                        <td>75</td>
+                                        <td>20</td>
+                                        <td>
+                                            Từ 8:00 20/8/2022 <br />
+                                            đến 14:00 25/8/2022 <br />
+                                            Huỷ trước 14:00 24/8/2022
+                                        </td>
+                                        <td>
+                                            Thứ 3 23/8/2022 7:30 - P23
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>-->
+            <section class="footer">
+                <div class="footer__access-count">Hiện có 100 truy cập</div>
+                <div class="footer__copyright">&#169; Một sản phẩm của VanCong</div>
+            </section>
+        </div>
+    </div>
+    <script src="../js/main.js"></script>
+    <script type="text/javascript">
+        function getDay() {
+            var day = new Date();
+            var yyyy = day.getFullYear();
+            var MM = day.getMonth() + 1;
+            if (MM < 10) {
+                MM = '0' + MM
+            }
+            var dd = day.getDate();
+            if (dd < 10) {
+                dd = '0' + dd;
+            }
+            var currDay = yyyy + '-' + MM + '-' + dd;
+            console.log(currDay);
+            //document.querySelector(".schedule__calendar-datetime").value = currDay;
+        }
+        getDay()
+        const countdown = document.getElementById("countdown");
+
+        let countdownValue = 10;
+        countdown.textContent = countdownValue;
+        const url = "UILichHoc.html";
+
+        setInterval(function () {
+            countdownValue--;
+            countdown.textContent = countdownValue;
+        }, 1000);
+
+        setTimeout(function () {
+            window.location.assign(url);
+        }, 10 * 1000);
+    </script>
+    <script type="text/javascript">
+        const dots = document.querySelector('.loading__dots');
+        const addAnimation = () => {
+            dots.classList.add('animate');
+            setTimeout(() => {
+                dots.classList.remove('animate');
+                setTimeout(() => {
+                    addAnimation();
+                }, 100);
+            }, 2600);
+        }
+        addAnimation();
+    </script>
+</body>
+</html>

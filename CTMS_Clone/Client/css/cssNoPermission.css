@@ -1,0 +1,43 @@
+﻿body {
+}
+
+.no-permission {
+    font-family: 'Poppins', sans-serif;
+    width: 650px;
+    margin: 0 auto;
+}
+
+.no-permission__img {
+    width: 200px;
+    float: right;
+}
+
+.no-permission__title {
+    padding-top: 15px;
+    color: #273d47;
+}
+
+.no-permission__subtitle {
+    color: red;
+}
+
+.no-permission__remind {
+    color: #b5b5b5;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.no-permission__link {
+    text-decoration: none;
+    font-size: 13px;
+    padding: 5px 10px;
+    font-weight: bold;
+    border-radius: 3px;
+    color:white;
+    background-color: #273d47;
+}
+
+.no-permission__link:hover {
+    background-color: #526263;
+    cursor: pointer;
+}

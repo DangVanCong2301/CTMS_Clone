@@ -1,0 +1,983 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>CTMS - Trang chủ</title>
+    <link href="../css/styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+</head>
+<body>
+    <div>
+        <header class="header">
+            <nav class="nav container">
+                <div class="nav__data">
+                    <a href="#" class="nav__logo">CTMS CLONE</a>
+                    <div class="nav__toggle" id="nav-toggle">
+                        <i class="uil uil-bars nav__burger"></i>
+                        <i class="uil uil-times nav__close"></i>
+                    </div>
+                </div>
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="dropdown__item">
+                            <div class="nav__link">
+                                Liên kết<i class="uil uil-angle-down dropdown__arrow"></i>
+                            </div>
+                            <ul class="dropdown__menu">
+                                <li>
+                                    <a href="#" class="dropdown__link">Trang chủ</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="dropdown__link">CTMS</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="dropdown__link">FForum</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown__item">
+                            <div class="nav__link">
+                                Cá nhân<i class="uil uil-angle-down dropdown__arrow"></i>
+                            </div>
+                            <ul class="dropdown__menu">
+                                <li>
+                                    <a href="#" class="dropdown__link">Kết quả học tập</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="dropdown__link">Đăng ký chuyên ngành</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="dropdown__link">Đăng ký lớp tín chỉ</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="dropdown__link">Hoá đơn học phí</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="dropdown__link">Đổi mật khẩu</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="dropdown__link">Thoát</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="nav__link">Lịch học</a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav__link">Lịch thi</a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav__link">Chương trình đào tạo</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <div class="schedule">
+            <section class="schedule__title">
+                Thời khoá biểu
+            </section>
+            <section class="timetable">
+                <div class="timetable__criteria timetable__criteria-facility">
+                    <div class="timetable__criteria-name">Cở sở đào tạo </div>
+                    <div class="timetable__select">
+                        <select class="timetable__select-box" onchange="locKhoi()">
+                            <option value="1">Tất cả</option>
+                            <option value="2">Khu giảng đường khoa CNTT</option>
+                            <option value="3">Số 193 - Vĩnh Hưng</option>
+                            <option value="4">Cơ sở ĐHM tại Văn Giang</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="timetable__criteria timetable__criteria-facility">
+                    <div class="timetable__criteria-name">Chế độ xem theo</div>
+                    <div class="timetable__select">
+                        <select class="timetable__select-box" onchange="locKhoi()">
+                            <option value="1">Tất cả</option>
+                            <option value="2">Phòng học</option>
+                            <option value="3">Số 193 - Vĩnh Hưng</option>
+                            <option value="4">Cơ sở ĐHM tại Văn Giang</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="timetable__criteria timetable__criteria-facility">
+                    <div class="timetable__criteria-name">Khung giờ</div>
+                    <div class="timetable__select">
+                        <select class="timetable__select-box" onchange="locKhoi()">
+                            <option value="1">Toàn bộ</option>
+                            <option value="2">7:00 -> 11:15</option>
+                            <option value="3">13:00 -> 16:15</option>
+                            <option value="4">17:15 -> 20:30</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="timetable__criteria timetable__criteria-facility">
+                    <div class="timetable__criteria-name">Tuần từ</div>
+                    <div class="timetable__select">
+                        <input type="date" name="name" class="schedule__calendar-datetime" value="" />
+                    </div>
+                </div>
+                <div class="timetable__criteria timetable__criteria-facility">
+                    <br />
+                    <div class="timetable__select">
+                        <input type="button" name="name" class="schedule__calendar-btn" value="Xem danh sách" />
+                    </div>
+                </div>
+                <!--Từ <input type="date" name="name" class="schedule__calendar-datetime" value="" /> đến <input type="date" class="schedule__calendar-datetime" name="name" value="" />-->
+            </section>
+            <section class="transcript__table bill__table timetable__table-home" style="font-size: 10px">
+                <div class="transcript__table-content">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Phòng học</th>
+                                <th>
+                                    Thứ 2 <br />
+                                    24/07/2023
+                                </th>
+                                <th>
+                                    Thứ 3 <br />
+                                    25/07/2023
+                                </th>
+                                <th>
+                                    Thứ 4 <br />
+                                    26/07/2023
+                                </th>
+                                <th>
+                                    Thứ 5 <br />
+                                    27/07/2023
+                                </th>
+                                <th>
+                                    Thứ 6 <br />
+                                    28/07/2023
+                                </th>
+                                <th>
+                                    Thứ 7 <br />
+                                    29/07/2023
+                                </th>
+                                <th>
+                                    Chủ nhật <br />
+                                    30/07/2023
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="timetable__row">
+                                <td>202</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr class="timetable__row">
+                                <td>203</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr class="timetable__row">
+                                <td>301</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr class="timetable__row">
+                                <td>B102</td>
+                                <td>
+                                    <div class="timetable__item">
+                                        <table>
+                                            <tr>
+                                                <td>7:30 -> 11:15</td>
+                                            </tr>
+                                            <tr>
+                                                <td>CSDL</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Nguyễn Thị Tâm</td>
+                                            </tr>
+                                            <tr>
+                                                <td>AAB4022023.003</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="btn-tools">
+                                                        <a class="btn-tool btn-tool-more webkit-box-table" href="UI/UIHoSoGiangVien.html" title="Xem chi tiết">Học trực tuyến</a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="timetable__item">
+                                        <table>
+                                            <tr>
+                                                <td>7:30 -> 11:15</td>
+                                            </tr>
+                                            <tr>
+                                                <td>CSDL</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Nguyễn Thị Tâm</td>
+                                            </tr>
+                                            <tr>
+                                                <td>AAB4022023.003</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="btn-tools">
+                                                        <a class="btn-tool btn-tool-more" href="UI/UIHoSoGiangVien.html" title="Xem chi tiết">Học</a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <div class="timetable__item">
+                                        <table>
+                                            <tr>
+                                                <td>7:30 -> 11:15</td>
+                                            </tr>
+                                            <tr>
+                                                <td>CSDL</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Nguyễn Thị Tâm</td>
+                                            </tr>
+                                            <tr>
+                                                <td>AAB4022023.003</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="btn-tools">
+                                                        <a class="btn-tool btn-tool-more" href="UI/UIHoSoGiangVien.html" title="Xem chi tiết">Học</a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <div class="timetable__item">
+                                        <table>
+                                            <tr>
+                                                <td>7:30 -> 11:15</td>
+                                            </tr>
+                                            <tr>
+                                                <td>CSDL</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Nguyễn Thị Tâm</td>
+                                            </tr>
+                                            <tr>
+                                                <td>AAB4022023.003</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="btn-tools">
+                                                        <a class="btn-tool btn-tool-rest" href="UI/UIHoSoGiangVien.html">Nghỉ</a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr class="timetable__row">
+                                <td>P21</td>
+                                <td></td>
+                                <td>
+                                    <div class="timetable__item">
+                                        <table>
+                                            <tr>
+                                                <td>7:30 -> 11:15</td>
+                                            </tr>
+                                            <tr>
+                                                <td>LTDĐ</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Chưa phân công</td>
+                                            </tr>
+                                            <tr>
+                                                <td>DS#6815</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="btn-tools">
+                                                        <a class="btn-tool btn-tool-exam" href="#">Thi</a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr class="timetable__row">
+                                <td>P22</td>
+                                <td>
+                                    <div class="timetable__item">
+                                        <table>
+                                            <tr>
+                                                <td>7:30 -> 11:15</td>
+                                            </tr>
+                                            <tr>
+                                                <td>CSDL</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Nguyễn Thị Tâm</td>
+                                            </tr>
+                                            <tr>
+                                                <td>AAB4022023.003</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="btn-tools">
+                                                        <a class="btn-tool btn-tool-more" href="UI/UIHoSoGiangVien.html" title="Xem chi tiết">Học</a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="timetable__item">
+                                        <table>
+                                            <tr>
+                                                <td>7:30 -> 11:15</td>
+                                            </tr>
+                                            <tr>
+                                                <td>PTTK</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Chưa phân công</td>
+                                            </tr>
+                                            <tr>
+                                                <td>DS#7229</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="btn-tools">
+                                                        <a class="btn-tool btn-tool-exam" href="UI/UIHoSoGiangVien.html">Thi</a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <div class="timetable__item">
+                                        <table>
+                                            <tr>
+                                                <td>7:30 -> 11:15</td>
+                                            </tr>
+                                            <tr>
+                                                <td>CSDL</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Nguyễn Thị Tâm</td>
+                                            </tr>
+                                            <tr>
+                                                <td>AAB4022023.003</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="btn-tools">
+                                                        <a class="btn-tool btn-tool-more" href="UI/UIHoSoGiangVien.html" title="Xem chi tiết">Học</a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="timetable__item">
+                                        <table>
+                                            <tr>
+                                                <td>7:30 -> 11:15</td>
+                                            </tr>
+                                            <tr>
+                                                <td>CSDL</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Nguyễn Thị Tâm</td>
+                                            </tr>
+                                            <tr>
+                                                <td>AAB4022023.003</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="btn-tools">
+                                                        <a class="btn-tool btn-tool-more" href="UI/UIHoSoGiangVien.html" title="Xem chi tiết">Học</a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="timetable__item">
+                                        <table>
+                                            <tr>
+                                                <td>7:30 -> 11:15</td>
+                                            </tr>
+                                            <tr>
+                                                <td>CSDL</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Nguyễn Thị Tâm</td>
+                                            </tr>
+                                            <tr>
+                                                <td>AAB4022023.003</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="btn-tools">
+                                                        <a class="btn-tool btn-tool-more" href="UI/UIHoSoGiangVien.html" title="Xem chi tiết">Học</a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="timetable__item">
+                                        <table>
+                                            <tr>
+                                                <td>7:30 -> 11:15</td>
+                                            </tr>
+                                            <tr>
+                                                <td>CSDL</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Nguyễn Thị Tâm</td>
+                                            </tr>
+                                            <tr>
+                                                <td>AAB4022023.003</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="btn-tools">
+                                                        <a class="btn-tool btn-tool-more" href="UI/UIHoSoGiangVien.html" title="Xem chi tiết">Học</a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="timetable__item">
+                                        <table>
+                                            <tr>
+                                                <td>7:30 -> 11:15</td>
+                                            </tr>
+                                            <tr>
+                                                <td>CSDL</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Nguyễn Thị Tâm</td>
+                                            </tr>
+                                            <tr>
+                                                <td>AAB4022023.003</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="btn-tools">
+                                                        <a class="btn-tool btn-tool-more" href="UI/UIHoSoGiangVien.html" title="Xem chi tiết">Học</a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="timetable__item">
+                                        <table>
+                                            <tr>
+                                                <td>7:30 -> 11:15</td>
+                                            </tr>
+                                            <tr>
+                                                <td>CSDL</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Nguyễn Thị Tâm</td>
+                                            </tr>
+                                            <tr>
+                                                <td>AAB4022023.003</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="btn-tools">
+                                                        <a class="btn-tool btn-tool-more" href="UI/UIHoSoGiangVien.html" title="Xem chi tiết">Học</a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="timetable__row">
+                                <td>P23</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <div class="timetable__item">
+                                        <table>
+                                            <tr>
+                                                <td>17:15 -> 20:00</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a style="" class="webkit-box-table" title="Hỏi thi phối hợp TT Đà Nẵng" href="#">Hỏi thi phối hợp TT Đà Nẵng</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Lê Hữu Dũng</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="btn-tools">
+                                                        <a class="btn-tool btn-tool-event" href="UI/UIHoSoGiangVien.html" title="Xem chi tiết">Sự kiện</a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr class="timetable__row">
+                                <td>P24</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <div class="timetable__item">
+                                        <table>
+                                            <tr>
+                                                <td>7:30 -> 11:15</td>
+                                            </tr>
+                                            <tr>
+                                                <td>CSDL</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Nguyễn Thị Tâm</td>
+                                            </tr>
+                                            <tr>
+                                                <td>AAB4022023.003</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="btn-tools">
+                                                        <a class="btn-tool btn-tool-more" href="UI/UIHoSoGiangVien.html" title="Xem chi tiết">Học</a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr class="timetable__row">
+                                <td>P31</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <div class="timetable__item">
+                                        <table>
+                                            <tr>
+                                                <td>7:30 -> 11:15</td>
+                                            </tr>
+                                            <tr>
+                                                <td>CSDL</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Nguyễn Thị Tâm</td>
+                                            </tr>
+                                            <tr>
+                                                <td>AAB4022023.003</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="btn-tools">
+                                                        <a class="btn-tool btn-tool-more" href="UI/UIHoSoGiangVien.html" title="Xem chi tiết">Học</a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr class="timetable__row">
+                                <td>P32</td>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <div class="timetable__item">
+                                        <table>
+                                            <tr>
+                                                <td>7:30 -> 11:15</td>
+                                            </tr>
+                                            <tr>
+                                                <td>CSDL</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Nguyễn Thị Tâm</td>
+                                            </tr>
+                                            <tr>
+                                                <td>AAB4022023.003</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="btn-tools">
+                                                        <a class="btn-tool btn-tool-more" href="UI/UIHoSoGiangVien.html" title="Xem chi tiết">Học</a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr class="timetable__row">
+                                <td>P33</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <div class="timetable__item">
+                                        <table>
+                                            <tr>
+                                                <td>7:30 -> 11:15</td>
+                                            </tr>
+                                            <tr>
+                                                <td>CSDL</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Nguyễn Thị Tâm</td>
+                                            </tr>
+                                            <tr>
+                                                <td>AAB4022023.003</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="btn-tools">
+                                                        <a class="btn-tool btn-tool-more" href="UI/UIHoSoGiangVien.html" title="Xem chi tiết">Học</a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr class="timetable__row">
+                                <td>P34</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <div class="timetable__item">
+                                        <table>
+                                            <tr>
+                                                <td>7:30 -> 11:15</td>
+                                            </tr>
+                                            <tr>
+                                                <td>CSDL</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Nguyễn Thị Tâm</td>
+                                            </tr>
+                                            <tr>
+                                                <td>AAB4022023.003</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="btn-tools">
+                                                        <a class="btn-tool btn-tool-more" href="UI/UIHoSoGiangVien.html" title="Xem chi tiết">Học</a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr class="timetable__row">
+                                <td>P41</td>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <div class="timetable__item">
+                                        <table>
+                                            <tr>
+                                                <td>7:30 -> 11:15</td>
+                                            </tr>
+                                            <tr>
+                                                <td>CSDL</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Nguyễn Thị Tâm</td>
+                                            </tr>
+                                            <tr>
+                                                <td>AAB4022023.003</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="btn-tools">
+                                                        <a class="btn-tool btn-tool-more" href="UI/UIHoSoGiangVien.html" title="Xem chi tiết">Học</a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr class="timetable__row">
+                                <td>P42</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <div class="timetable__item">
+                                        <table>
+                                            <tr>
+                                                <td>7:30 -> 11:15</td>
+                                            </tr>
+                                            <tr>
+                                                <td>CSDL</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Nguyễn Thị Tâm</td>
+                                            </tr>
+                                            <tr>
+                                                <td>AAB4022023.003</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="btn-tools">
+                                                        <a class="btn-tool btn-tool-more" href="UI/UIHoSoGiangVien.html" title="Xem chi tiết">Học</a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr class="timetable__row">
+                                <td>P43</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <div class="timetable__item">
+                                        <table>
+                                            <tr>
+                                                <td>7:30 -> 11:15</td>
+                                            </tr>
+                                            <tr>
+                                                <td>CSDL</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Nguyễn Thị Tâm</td>
+                                            </tr>
+                                            <tr>
+                                                <td>AAB4022023.003</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="btn-tools">
+                                                        <a class="btn-tool btn-tool-more" href="UI/UIHoSoGiangVien.html" title="Xem chi tiết">Học</a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr class="timetable__row">
+                                <td>P44</td>
+                                <td>
+                                    <div class="timetable__item">
+                                        <table>
+                                            <tr>
+                                                <td>7:30 -> 11:15</td>
+                                            </tr>
+                                            <tr>
+                                                <td>CSDL</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Nguyễn Thị Tâm</td>
+                                            </tr>
+                                            <tr>
+                                                <td>AAB4022023.003</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="btn-tools">
+                                                        <a class="btn-tool btn-tool-more" href="UI/UIHoSoGiangVien.html" title="Xem chi tiết">Học</a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr class="timetable__row">
+                                <td>P51</td>
+                                <td>
+                                    <div class="timetable__item">
+                                        <table>
+                                            <tr>
+                                                <td>7:30 -> 11:15</td>
+                                            </tr>
+                                            <tr>
+                                                <td>CSDL</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Nguyễn Thị Tâm</td>
+                                            </tr>
+                                            <tr>
+                                                <td>AAB4022023.003</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="btn-tools">
+                                                        <a class="btn-tool btn-tool-more" href="UI/UIHoSoGiangVien.html" title="Xem chi tiết">Học</a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr class="timetable__row">
+                                <td>P52</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <div class="timetable__item">
+                                        <table>
+                                            <tr>
+                                                <td>7:30 -> 11:15</td>
+                                            </tr>
+                                            <tr>
+                                                <td>CSDL</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Nguyễn Thị Tâm</td>
+                                            </tr>
+                                            <tr>
+                                                <td>AAB4022023.003</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="btn-tools">
+                                                        <a class="btn-tool btn-tool-more" href="UI/UIHoSoGiangVien.html" title="Xem chi tiết">Học</a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <section class="footer">
+                <div class="footer__access-count">Hiện có 100 truy cập</div>
+                <div class="footer__copyright">&#169; Một sản phẩm của VanCong</div>
+            </section>
+        </div>
+    </div>
+    <script src="../js/main.js"></script>
+    <script type="text/javascript">
+        function getDay() {
+            var day = new Date();
+            var yyyy = day.getFullYear();
+            var MM = day.getMonth() + 1;
+            if (MM < 10) {
+                MM = '0' + MM
+            }
+            var dd = day.getDate();
+            if (dd < 10) {
+                dd = '0' + dd;
+            }
+            var currDay = yyyy + '-' + MM + '-' + dd;
+            console.log(currDay);
+            document.querySelector(".schedule__calendar-datetime").value = currDay;
+        }
+        getDay()
+        const countdown = document.getElementById("countdown");
+
+        let countdownValue = 10;
+        countdown.textContent = countdownValue;
+        const url = "UILichHoc.html";
+
+        setInterval(function () {
+            countdownValue--;
+            countdown.textContent = countdownValue;
+        }, 1000);
+
+        setTimeout(function () {
+            window.location.replace(url);
+        }, 10 * 1000);
+    </script>
+</body>
+</html>

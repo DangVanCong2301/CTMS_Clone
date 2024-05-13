@@ -1,0 +1,58 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Lemon&family=Montserrat:wght@400;600&family=Open+Sans:wght@400;600&family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+/** Variable */
+:root {
+    --header-height: 3.5rem;
+    --black-color: hsl(220, 24%, 12%);
+    --black-color-light: hsl(220, 24%, 15%);
+    --black-color-lighten: hsl(220, 20%, 18%);
+    --white-color: #fff;
+    --body-color: hsl(220, 100%, 97%);
+    --body-font: 'Montserrat', sans-serif;
+    --normal-font-size: .938rem;
+    --font-regular: 400;
+    --font-semi-bold: 600;
+    --z-tooltip: 10;
+    --z-fixed: 100;
+}
+
+.no-permission {
+    font-family: 'Montserrat', sans-serif;
+    width: 650px;
+    margin: 0 auto;
+}
+
+.no-permission__img {
+    font-size: 10rem;
+    float: right;
+}
+
+.no-permission__title {
+    padding-top: 15px;
+    color: #273d47;
+}
+
+.no-permission__subtitle {
+    color: red;
+}
+
+.no-permission__remind {
+    color: #b5b5b5;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.no-permission__link {
+    text-decoration: none;
+    font-size: 13px;
+    padding: 5px 10px;
+    font-weight: bold;
+    border-radius: 3px;
+    color:white;
+    background-color: #273d47;
+}
+
+.no-permission__link:hover {
+    background-color: #526263;
+    cursor: pointer;
+}
